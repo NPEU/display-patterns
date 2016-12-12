@@ -1,2 +1,4 @@
-# display-patterns
-Display patterns in use on the (future) NPEU website
+Display patterns
+================
+
+Display patterns in use on the (future) NPEU website.
