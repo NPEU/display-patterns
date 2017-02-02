@@ -1,0 +1,49 @@
+/*
+
+*/
+
+.pagination {
+    &#{&} {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                
+        -webkit-box-pack: center;
+           -ms-flex-pack: center;
+         justify-content: center
+    }
+        .pagination__info {
+            margin-right: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .pagination__links {
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    
+            list-style-type: none;
+        }
+            .pagination__item {
+                margin: 0;
+                padding: 0;
+            }
+
+            .pagination__item:not(:first-child)::before {
+                content: "\00a0|"; 
+                margin-left: 0.25rem;
+                margin-right: 0.25rem;
+            }
+            
+                .pagination__link {
+                    
+                }
+}
