@@ -2,6 +2,9 @@
 
 */
 
+$pagination__info--spacing: 1rem !default;
+$pagination__item--spacing: 0.25rem !default;
+
 .pagination {
     &#{&} {
         display: -webkit-flex;
@@ -17,7 +20,7 @@
          justify-content: center
     }
         .pagination__info {
-            margin-right: 1rem;
+            margin-right: $pagination__info--spacing;
             margin-bottom: 0;
         }
         
@@ -39,8 +42,8 @@
 
             .pagination__item:not(:first-child)::before {
                 content: "\00a0|"; 
-                margin-left: 0.25rem;
-                margin-right: 0.25rem;
+                margin-left: $pagination__item--spacing;
+                margin-right: $pagination__item--spacing;
             }
             
                 .pagination__link {

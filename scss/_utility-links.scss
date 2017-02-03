@@ -2,6 +2,8 @@
 
 */
 
+$utility-links__item--spacing: 0.25rem !default;
+
 .utility-links {
     &#{&} {
         display: -webkit-inline-flex;
@@ -22,8 +24,8 @@
 
         .utility-links__item:not(:first-child)::before {
             content: "\00a0|"; 
-            margin-left: 0.25rem;
-            margin-right: 0.25rem;
+            margin-left: $utility-links__item--spacing;
+            margin-right: $utility-links__item--spacing;
         }
         
             .utility-links__link {
