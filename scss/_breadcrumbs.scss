@@ -21,7 +21,7 @@
             padding: 0;
         }
 
-        .breadcrumbs__item {
+        .breadcrumbs__item::before {
             content: "\00a0/"; 
             margin-left: 0.25rem;
             margin-right: 0.25rem;
