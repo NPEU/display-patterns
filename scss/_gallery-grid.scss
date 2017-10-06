@@ -2,6 +2,10 @@
 
 */
 
+$gallery-grid-spacing-unit: 1rem !default;
+$gallery-grid-spacing-unit--small: ($gallery-grid-spacing-unit / 2) !default;
+$gallery-grid-spacing-unit--large: ($gallery-grid-spacing-unit * 2) !default;
+
 .gallery-grid {
 
     &#{&} {
@@ -17,7 +21,7 @@
            -ms-flex-pack: center;
          justify-content: center;
 
-        margin-bottom: 1.5rem;
+        margin-bottom: $gallery-grid-spacing-unit;
     }
 
     
@@ -36,6 +40,11 @@
         }
 }
 
+.gallery-grid.gallery-grid--gutter--small,
+.gallery-grid.gallery-grid--gutter--medium,
+.gallery-grid.gallery-grid--gutter--large {
+	margin-bottom: 0;
+}
 
 .gallery-grid--basis-20 .gallery-grid__item {
          -webkit-flex-basis: 20em;
@@ -47,21 +56,30 @@
 /* @TODO make breakpoint a variable */
 
 
-.gallery-grid--gutter-small {
-    margin-left: -0.375rem;
-    margin-right: -0.375rem;
+.gallery-grid--gutter--small {
+    margin-left: -($gallery-grid-spacing-unit--small / 2);
+    margin-right: -($gallery-grid-spacing-unit--small / 2);
     
     .gallery-grid__item {
-        padding: 0 0.375rem 0.75rem 0.375rem;
+        padding: 0 ($gallery-grid-spacing-unit--small / 2) $gallery-grid-spacing-unit--small ($gallery-grid-spacing-unit--small / 2);
+    }
+}
+
+.gallery-grid--gutter--medium {
+    margin-left: -($gallery-grid-spacing-unit / 2);
+    margin-right: -($gallery-grid-spacing-unit / 2);
+    
+    .gallery-grid__item {
+        padding: 0 ($gallery-grid-spacing-unit / 2) $gallery-grid-spacing-unit ($gallery-grid-spacing-unit / 2);
     }
 }
 
     
-.gallery-grid--gutter-large {
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
+.gallery-grid--gutter--large {
+    margin-left: -($gallery-grid-spacing-unit--large / 2);
+    margin-right: -($gallery-grid-spacing-unit--large / 2);
     
     .gallery-grid__item {
-        padding: 0 0.75rem 1.5rem 0.75rem;
+        padding: 0 ($gallery-grid-spacing-unit--large / 2) $gallery-grid-spacing-unit--large ($gallery-grid-spacing-unit--large / 2);
     }
 }
