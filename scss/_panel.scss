@@ -1,5 +1,6 @@
 //$panel--base-color		 : #eee !default;
-$panel-namespace: c-;
+$panel-namespace: c- !default;
+$theme-namespace: t- !default;
 
 $panel--text-color       : #333 !default;
 $panel--background-color : #eee !default;
@@ -13,12 +14,10 @@ $panel--padding: 2rem !default;
 
 .#{$panel-namespace}panel {
 	padding: $panel--padding;
+	
+	@include bottom-space-fix();
 }
 
-//@mixin panel-theme (
-//	$name: "",
-//	$options: ()
-//) {
 
 @mixin panel-theme (
 	$name			  : "",
@@ -29,10 +28,11 @@ $panel--padding: 2rem !default;
 	$border-style     : $panel--border-style
 ) {
 	// Set up theme name:
-	$theme-prefix: "";
-	@if ($name != "") {
-		$theme-prefix: t-;
+	$theme-class: "";
+	@if $name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$name};
 	}
+	@debug $theme-class;
 
 	// Problem here is that we only want to set a darker border colour if we haven't explicated
 	// set one. Default is passed to config, but theme override may be different and we need to know
@@ -46,13 +46,12 @@ $panel--padding: 2rem !default;
 	// There's no '&' being used, so not sure what's going on.
 	// Using nested option as a workaround.
 	//.#{$panel-namespace}panel.#{$theme-prefix}#{$name} {
-	.#{$panel-namespace}panel {
-		&.#{$theme-prefix}#{$name} {
-			color: $text-color;
-			background: $background-color;
+	// + panel + . + #{$theme-prefix} + #{$name}
+	.#{$panel-namespace}panel#{$theme-class} {
+		color: $text-color;
+		background: $background-color;
 
-			outline: 1px solid $border-color;
-		}
+		outline: 1px solid $border-color;
 	}
 
 }
