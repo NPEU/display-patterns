@@ -36,8 +36,12 @@ $pagination__item--spacing: 0.25rem !default;
             list-style-type: none;
         }
             .pagination__item {
-                margin: 0;
                 padding: 0;
+                margin: 0;
+            }
+            
+            .pagination__item:not(:first-child) {
+                margin-left: 1em;
             }
 
             .pagination__item:not(:first-child)::before {
