@@ -16,11 +16,16 @@ $utility-links__item--spacing: 0.25rem !default;
         
         list-style-type: none;
     }
-    
+        
         .utility-links__item {
-            margin: 0;
-            padding: 0;
-        }
+                padding: 0;
+                margin: 0;
+            }
+            
+            .utility-links__item:not(:first-child) {
+                margin-left: 1em;
+            }
+
 
         .utility-links__item:not(:first-child)::before {
             content: "\00a0|"; 
